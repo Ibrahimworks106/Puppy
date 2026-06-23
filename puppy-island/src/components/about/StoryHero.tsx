@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { LazyVideo } from "@/components/ui/LazyVideo";
 
 export const StoryHero = () => {
   return (
@@ -26,12 +25,15 @@ export const StoryHero = () => {
           </div>
         </div>
 
-        {/* Right: Video with Badge */}
+        {/* Right: Image with Badge */}
         <div className="relative">
           <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl">
-            <LazyVideo
-              src="/videos/FILMPAC_white-dog-laying-in-a-grassy-field-at-golden-hour_FFAAM0238_sample.mp4"
-              className="absolute inset-0 w-full h-full object-cover"
+            <Image
+              src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=2070"
+              alt="Golden Retriever on a pool lounger"
+              fill
+              className="object-cover"
+              priority
             />
           </div>
           

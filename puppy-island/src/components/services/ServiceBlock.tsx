@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
-import { LazyVideo } from "@/components/ui/LazyVideo";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -21,7 +20,6 @@ interface ServiceBlockProps {
   priceSuffix?: string;
   buttonText: string;
   imageSrc?: string;
-  videoSrc?: string;
   imageAlt: string;
   icon: React.ReactNode;
   iconBgColor?: string;
@@ -38,7 +36,6 @@ export const ServiceBlock = ({
   priceSuffix,
   buttonText,
   imageSrc,
-  videoSrc,
   imageAlt,
   icon,
   iconBgColor = "bg-ocean",
@@ -99,15 +96,10 @@ export const ServiceBlock = ({
             </div>
           </div>
 
-          {/* Media (Image or Video) */}
+          {/* Media (Image) */}
           <div className="flex-1 relative w-full aspect-[4/3] lg:aspect-auto lg:h-[500px]">
             <div className="relative w-full h-full rounded-[32px] overflow-hidden shadow-2xl bg-sand/50">
-              {videoSrc ? (
-                <LazyVideo
-                  src={videoSrc}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              ) : imageSrc ? (
+              {imageSrc ? (
                 <Image
                   src={imageSrc}
                   alt={imageAlt}

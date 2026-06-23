@@ -6,7 +6,6 @@ import { useDogName } from "@/lib/dogName";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Heart } from "lucide-react";
-import { LazyVideo } from "@/components/ui/LazyVideo";
 
 import Image from "next/image";
 
@@ -39,12 +38,14 @@ export const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-[90vh] w-full overflow-hidden bg-ocean flex items-center px-6 md:px-12 py-20">
-      {/* Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <LazyVideo
-          src="/videos/front-page.mp4"
+        <Image
+          src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2069"
+          alt="Puppy Island Resort"
+          fill
           className="absolute inset-0 w-full h-full object-cover opacity-50"
-          poster="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2069"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ocean/50 to-bark/80" />
       </div>
