@@ -53,13 +53,15 @@ export const Hero = () => {
           ease: "easeInOut"
         }}
       >
-        <Image
-          src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070"
-          alt="Tropical beach with palm trees"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/Puppy-Island-Care-&-Spa-Glendale's-Tropical-Getaway-for-Lux-Boarding,-Daycare,-Grooming-&-Spa-watermark.mp4" type="video/mp4" />
+        </video>
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
 
