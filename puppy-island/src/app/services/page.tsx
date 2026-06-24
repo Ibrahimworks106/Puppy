@@ -13,6 +13,8 @@ import { ServiceBlock } from "@/components/services/ServiceBlock";
 import { PerksStrip } from "@/components/services/PerksStrip";
 import { Button } from "@/components/ui/Button";
 import { useDogName } from "@/lib/dogName";
+import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
+import { WaveDivider } from "@/components/ui/WaveDivider";
 
 const SERVICES_DATA = [
   {
@@ -132,26 +134,28 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-ocean pt-32 pb-64 overflow-hidden">
-        {/* Tropical Shape Overlay */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <svg className="w-full h-full scale-150 rotate-12" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M50 0 C 70 20, 90 50, 50 100 C 10 50, 30 20, 50 0 Z" fill="currentColor" />
-          </svg>
-        </div>
+      <FadeInOnScroll>
+        <section className="relative bg-gradient-to-br from-ocean to-coconut pt-32 pb-64 overflow-hidden">
+          {/* Tropical Shape Overlay */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <svg className="w-full h-full scale-150 rotate-12" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M50 0 C 70 20, 90 50, 50 100 C 10 50, 30 20, 50 0 Z" fill="currentColor" />
+            </svg>
+          </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 text-center">
-          <h1 className="font-display text-5xl md:text-8xl text-foam mb-8 leading-tight max-w-5xl mx-auto">
-            Everything Your Dog Deserves
-          </h1>
-          <p className="font-body text-xl md:text-2xl text-foam/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            A luxury retreat where tropical vibes meet world-class pet care. Our services are tailored to the unique personality of your furry family member.
-          </p>
-          <Button variant="primary" size="lg" className="px-12 bg-coral hover:bg-coral/90">
-            Explore Spa Menu
-          </Button>
-        </div>
-      </section>
+          <div className="relative max-w-7xl mx-auto px-6 md:px-12 text-center">
+            <h1 className="font-display text-5xl md:text-8xl text-foam mb-8 leading-tight max-w-5xl mx-auto">
+              Everything Your Dog Deserves
+            </h1>
+            <p className="font-body text-xl md:text-2xl text-foam/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+              A luxury retreat where tropical vibes meet world-class pet care. Our services are tailored to the unique personality of your furry family member.
+            </p>
+            <Button variant="primary" size="lg" className="px-12 bg-coral hover:bg-coral/90">
+              Explore Spa Menu
+            </Button>
+          </div>
+        </section>
+      </FadeInOnScroll>
 
       {/* Services List */}
       <div className="bg-sand -mt-24 relative z-10 rounded-t-[64px]">
@@ -160,31 +164,37 @@ export default function ServicesPage() {
         ))}
       </div>
 
+      <WaveDivider color="#FFB627" />
+
       {/* Perks Strip */}
-      <PerksStrip />
+      <FadeInOnScroll>
+        <PerksStrip />
+      </FadeInOnScroll>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 md:px-12 bg-sand">
-        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#D1523B] to-[#1A6B72] p-12 md:p-24 text-center text-foam shadow-2xl">
-          {/* Subtle tropical leaf pattern overlay could go here */}
-          <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
-            <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight">
-              Ready to Book {dogName}&apos;s Stay?
-            </h2>
-            <p className="text-xl md:text-2xl text-foam/90 leading-relaxed">
-              Join the waiting list for our next season or secure your grooming spot today. Your pup&apos;s tropical adventure is just a click away.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
-              <Button variant="foam" size="lg" className="w-full sm:w-auto px-12">
-                Book Online Now
-              </Button>
-              <Button variant="ghost" size="lg" className="w-full sm:w-auto px-12 border-foam text-foam hover:bg-foam/10">
-                Call the Front Desk
-              </Button>
+      <FadeInOnScroll>
+        <section className="py-24 px-6 md:px-12 bg-sand">
+          <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#D1523B] to-[#1A6B72] p-12 md:p-24 text-center text-foam shadow-2xl">
+            {/* Subtle tropical leaf pattern overlay could go here */}
+            <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
+              <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight">
+                Ready to Book {dogName}&apos;s Stay?
+              </h2>
+              <p className="text-xl md:text-2xl text-foam/90 leading-relaxed">
+                Join the waiting list for our next season or secure your grooming spot today. Your pup&apos;s tropical adventure is just a click away.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+                <Button variant="foam" size="lg" className="w-full sm:w-auto px-12">
+                  Book Online Now
+                </Button>
+                <Button variant="ghost" size="lg" className="w-full sm:w-auto px-12 border-foam text-foam hover:bg-foam/10">
+                  Call the Front Desk
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInOnScroll>
     </div>
   );
 }

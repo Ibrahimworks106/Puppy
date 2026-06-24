@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { DogNameProvider } from "@/lib/dogName";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
+import { FloatingDecorations } from "@/components/ui/FloatingDecorations";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +20,8 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col font-body bg-sand text-bark">
         <DogNameProvider>
+          <ScrollIndicator />
+          <FloatingDecorations />
           <Navbar />
           <main className="flex-1">
             {children}

@@ -7,7 +7,7 @@ function cn(...inputs: ClassValue[]) {
 }
 
 interface SectionLabelProps {
-  color?: "ocean" | "coral" | "foam" | "bark";
+  color?: "ocean" | "coral" | "foam" | "bark" | "coconut";
   children: React.ReactNode;
   className?: string;
 }
@@ -22,6 +22,7 @@ export const SectionLabel = ({
     coral: "text-coral",
     foam: "text-foam",
     bark: "text-bark",
+    coconut: "text-coconut",
   };
 
   return (

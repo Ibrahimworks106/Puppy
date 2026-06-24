@@ -54,7 +54,7 @@ export const Navbar = () => {
               key={link.href}
               href={link.href}
               className={cn(
-                "relative font-body text-[15px] font-medium text-bark hover:text-ocean transition-colors py-1 group",
+                "relative font-body text-[15px] font-medium text-bark hover:text-coral transition-colors py-1 group",
                 pathname === link.href && "text-bark"
               )}
             >
@@ -77,7 +77,7 @@ export const Navbar = () => {
             </Button>
           </div>
           <button
-            className="md:hidden text-bark hover:text-ocean transition-colors"
+            className="md:hidden text-bark hover:text-coral transition-colors"
             onClick={() => setIsOpen(true)}
           >
             <Menu size={28} />

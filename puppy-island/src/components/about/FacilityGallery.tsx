@@ -1,5 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { FadeInOnScroll } from "@/components/ui/FadeInOnScroll";
 
 const IMAGES = [
   { src: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069", alt: "Outdoor island playground" },
@@ -13,25 +15,29 @@ export const FacilityGallery = () => {
   return (
     <section className="py-24 px-6 md:px-12 bg-bark">
       <div className="max-w-7xl mx-auto text-center">
-        <SectionLabel color="coral" className="mb-4">THE ISLAND GROUNDS</SectionLabel>
-        <h2 className="font-display text-4xl md:text-5xl text-foam mb-16 font-bold">
-          A Peek Inside Paradise
-        </h2>
+        <FadeInOnScroll>
+          <SectionLabel color="coral" className="mb-4">THE ISLAND GROUNDS</SectionLabel>
+          <h2 className="font-display text-4xl md:text-5xl text-foam mb-16 font-bold">
+            A Peek Inside Paradise
+          </h2>
+        </FadeInOnScroll>
 
         <div className="flex flex-wrap justify-center gap-6">
           {IMAGES.map((img, idx) => (
-            <div 
+            <FadeInOnScroll 
               key={idx} 
-              className="relative w-full md:w-[calc(33.333%-16px)] aspect-square rounded-[32px] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02] cursor-pointer"
+              delay={0.1 * idx} 
+              direction="up"
+              className="relative w-full md:w-[calc(33.333%-16px)] aspect-square rounded-[32px] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-110 cursor-pointer"
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 hover:scale-110"
               />
-              <div className="absolute inset-0 bg-bark/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-            </div>
+              <div className="absolute inset-0 bg-foam/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+            </FadeInOnScroll>
           ))}
         </div>
       </div>
