@@ -60,7 +60,7 @@ export const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/Puppy-Island-Care-&-Spa-Glendale's-Tropical-Getaway-for-Lux-Boarding,-Daycare,-Grooming-&-Spa-watermark.mp4" type="video/mp4" />
+          <source src="/videos/puppy-island-hero.mp4" type="video/mp4" />
         </video>
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
